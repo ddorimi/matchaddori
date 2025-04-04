@@ -4,6 +4,9 @@ body {
     margin: 0;
     font-family: "Poppins", sans-serif;
     background-color: #FCFFE0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 
 }
 .header {
@@ -13,17 +16,19 @@ body {
 
 }
 .header img {
-    width:350px;
+    width: 380px;
     height: auto;
 
 }
 .container {
     display: flex;
+    align-items: flex-start;
 }
 
 .sidebar {
     height: 600px;
     width: 900px;
+    max-width: 200px;
     background: url('assets/BG\ PINK.png')  no-repeat center center/cover;
     padding: 50px;
     display: flex;
@@ -37,6 +42,7 @@ body {
     border: none;
     padding: 15px;
     width: 80%;
+    max-width: 200px;
     margin-bottom: 30px;
     font-weight: bold;
     font-size: 16px;
@@ -58,12 +64,15 @@ body {
     transform: translateY(-3px); 
     box-shadow: 0px 12px 20px -2px rgba(0, 0, 0, 0.4);
 }
+
+/*HOME PAGE*/
+
 .content{
     display: flex;
     flex-direction: row-reverse; 
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
+    padding: 80px;
     gap: 20px;
 }
 
@@ -96,10 +105,10 @@ body {
     font-weight: 800;
     font-size: 32px;
     color: #6B7B56;
-    white-space: nowrap; /* Prevents text from wrapping */
-    overflow: hidden; /* Hides overflowing text */
-    border-right: 3px solid #4A4A4A; /* Cursor effect */
-    width: 0; /* Starts with no width */
+    white-space: nowrap; 
+    overflow: hidden; 
+    border-right: 3px solid #4A4A4A; 
+    width: 0; 
     animation: typing 3s steps(25, end) forwards, blink 0.7s infinite;
 }
 .content p{
@@ -115,16 +124,346 @@ body {
 }
 
 .footer {
-    width: 1920px; 
-    height: 108px;
-    background-color: #A5B68D; 
+    width: 100%; 
+    max-width: 1920px; 
+    height: 102px;
+    background-color: #A5B68D;
     color: white;
     display: flex;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    position: relative;  
+}
+
+/*MENU PAGE*/
+
+.menu-content {
+    background-color: #FCFFE0;
+    width: 80%;
+    margin-left: 100px;
+    padding: 40px;
+    text-align: center; 
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    justify-content: center;
+}
+
+.menu-item img{
+    width: 90px;
+    height: 150px;
+    margin: 0 auto 55px;  
+}
+
+.menu-item {
+    background-color: #FFE4E1;
+    text-align: center;
+    width: 250px;
+    padding-top: 30px;
+    padding: 80px 0 0;
+    border-radius: 15px;
+    border-radius: 190px 190px 0 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-item {
+    transition: 0.3s ease-in-out;
+}
+
+.menu-item:hover {
+    background-color: #f3b6c4;
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+.menu-text {
+    transition: 0.3s ease-in-out;
+}
+
+.menu-item:hover .menu-text {
+    background-color: #D88CA4; 
+    color: white;
+}
+
+
+.menu-text {
+    color: #FCE7E7;
+    background-color: #EFB6C8;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%; 
+    padding: 15px 0; 
+    display: flexbox; 
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+}
+
+.menu-item span {
+    font-weight: bold;
+    color: #6B7B56;
+}
+
+/* MUSIC PAGE */
+.music-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 70vh;
+    background-color: #FCFFE0;
+}
+
+.music-frame {
+    background-color: #FCE7E7;
+    width: 100%;
+    max-width: 700px;
+    border-radius: 80px;
+    box-shadow: inset 1px 0px 33.3px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    position: relative;
+    gap: 20px;
+}
+
+.screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 350px;
+    background: url('assets/Rectangle\ 80.png') no-repeat center center/cover;
+    padding: 20px 10px 10px 20px;
+    box-shadow: inset 1px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.image-info-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.album-art {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.song-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.song-title {
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.artist {
+    font-size: 16px;
+    color: #FFFFFF;
+    margin: 5px 0;
+}
+
+.progress-container {
+    position: relative;
+    width: 100%;
+    padding-top: 10px; /* Optional: Space between progress bar and other elements */
+    box-sizing: border-box; /* Ensure padding does not affect width */
+}
+/* Adjust progress bar height */
+.progress-bar {
+    width: 100%;
+    height: 15px; /* Adjust the height of the progress bar */
+    background-color: #4A4741;
+    accent-color: #FFFFFF;
+    border-radius: 10px; /* Optional: add rounded corners for a smoother look */
+}
+
+/* Optional: Customize the appearance of the thumb (the draggable part) */
+.progress-bar::-webkit-slider-thumb {
+    height: 20px; 
+    width: 20px;  
+    background-color: #FFFFFF; 
+    border-radius: 50%; /* Rounded thumb */
+    cursor: pointer; /* Change cursor on hover */
+}
+
+.progress-bar::-moz-range-thumb {
+    height: 20px; /* Increase thumb height */
+    width: 20px;  /* Increase thumb width */
+    background-color: #FFFFFF; /* Thumb color */
+    border-radius: 50%; /* Rounded thumb */
+    cursor: pointer; /* Change cursor on hover */
+}
+.time-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 14px;
+    color: #FFFFFF;
+    margin-top: 10px;
+}
+
+.current-time,
+.duration-time {
+    font-weight: 400px;
+}
+
+
+/* iPod Controls */
+.ipod-controls {
+    margin-top: 20px;
+}
+
+.circle {
+    width: 200px;
+    height: 200px;
+    background-color: #FDF3F3;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: inset 0 2px 5px 1px rgba(105, 68, 68, 0.5);
+    position: relative;
+}
+
+.inner-circle {
+    width: 80px; 
+    height: 80px;
+    background-color: #FFDDDD; 
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 2px 5px 1px rgba(105, 68, 68, 0.5);
+}
+
+.menu {
+    font-size: 18px;
+    position: absolute;
+    top: 10px;
+    font-weight: 400px;
+    color: #EFB6C8;
+
+}
+
+.control-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    position: absolute;
+    width: 35px;
+    height: 35px;
+}
+
+.control-btn img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.prev { left: 15px; }
+.next { right: 15px; }
+.play { bottom: 10px; }
+
+.control-btn:hover {
+    color: #F8C1C1;
+}
+
+/* JOB PAGE */
+.job-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Job Content */
+.job-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 58%;
+    font-size: 18px;
+    color: #6B7B56;
+    line-height: 1.6;
+}
+
+.job-content h3{
+    margin: 10px 0 5px 0;
     font-size: 18px;
 }
-.footer {
-    width: 100%; 
-    max-width: 1920px;
+
+.job-content p {
+    margin: 8px 0;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.job-heading {
+    background-color: #FCE7E7;
+    padding: 12px 50px;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #6B7B56;
+    margin-bottom: 15px;
+    width: fit-content;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.job-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.job-content ul li {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Job Image */
+.job-image {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.job-image img {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    border-radius: 15px;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
 }
