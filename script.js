@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const prevButton = document.querySelector(".control-btn.prev");
     const nextButton = document.querySelector(".control-btn.next");
 
+    progressBar.min = 0;
+
     // Set duration and progress bar max value when audio is ready
     audio.addEventListener("loadedmetadata", function () {
         const duration = audio.duration;
@@ -19,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const seconds = Math.floor(duration % 60);
         durationTimeDisplay.textContent = `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
         progressBar.max = duration;
+        progressBar.value = 0;
     });
 
     // Update current time and progress bar
@@ -54,5 +57,24 @@ document.addEventListener("DOMContentLoaded", function () {
     // Skip forward
     nextButton.addEventListener("click", function () {
         audio.currentTime = Math.min(audio.duration, audio.currentTime + 10);
+    });
+
+    // Highlight the active button
+    const currentPage = document.title.toLowerCase(); // Assuming the title of the page matches the button label
+
+    // Select all buttons and their corresponding page names
+    const buttons = {
+        homeBtn: "home",
+        menuBtn: "menu",
+        musicBtn: "music",
+        jobsBtn: "jobs"
+    };
+
+    // Function to set the active button based on the current page
+    Object.keys(buttons).forEach(buttonId => {
+        const button = document.getElementById(buttonId);
+        if (currentPage.includes(buttons[buttonId])) {
+            button.classList.add("active");
+        }
     });
 });
