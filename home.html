@@ -1,41 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matchaddori - Home</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel = "icon" type= "image/png" href="assets/matcha logo.png">
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Matchaddori</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="assets/matcha logo.png" />
+  <script defer>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll(".main-section");
+      sections.forEach((sec) => (sec.style.display = "none"));
+
+      document.getElementById(sectionId).style.display = "block";
+
+      const buttons = document.querySelectorAll(".sidebar button");
+      buttons.forEach((btn) => btn.classList.remove("active"));
+      document.querySelector(`[data-section='${sectionId}']`).classList.add("active");
+    }
+
+    window.onload = () => showSection("home");
+  </script>
 </head>
 <body>
-    <div class="header"><img src="assets/md logo.png" alt="Matchaddori logo">
-    </div>
-    <div class="container">
-        <div class="sidebar">
-            <button id="homeBtn" class="active">HOME</button>
-            <button id="menuBtn" onclick="navigateTo('menu.html')">MENU</button>
-            <button id="musicBtn" onclick="navigateTo('music.html')">MUSIC</button>
-            <button id="jobsBtn" onclick="navigateTo('jobs.html')">JOBS</button>
-            
-        </div>
-        <div class="content">
-            <img src="assets/matcha cup 1.png" alt="Matcha Latte">
-            <div class="text-container">
-            <h2>Welcome to Matchaddori – A Matcha Lover’s Haven! 🍵</h2>
-            <p>At Matchaddori, we craft every cup with the finest ceremonial-grade matcha, whisked to perfection for a smooth, rich, 
-            and refreshing experience. Whether you're here for a creamy latte, a traditional bowl of matcha, or a unique matcha-infused treat, 
-            we’re dedicated to bringing you pure, vibrant flavors in every sip.
-            Step into our cozy space, take a moment to unwind, and savor the art of matcha. 💚🌸</p>
-            <p class="location">📍 Visit us in-store or order online!</p>
-            <p>6 San Juan St. Purok 4B, Lower Bicutan, Taguig City | 09179973204</p>
-        </div>
-    </div>
+  <div class="header">
+    <img src="assets/md logo.png" alt="Matchaddori logo" />
+  </div>
+
+  <div class="container">
+    <div class="sidebar">
+      <button class="active" data-section="home" onclick="showSection('home')">HOME</button>
+      <button data-section="menu" onclick="showSection('menu')">MENU</button>
+      <button data-section="music" onclick="showSection('music')">MUSIC</button>
+      <button data-section="jobs" onclick="showSection('jobs')">JOBS</button>
     </div>
 
-    
-    <div class="footer">
-        <p>Copyright &copy; 2025 Matchaddori | <b>ddorimi13@gmail.com</b></p>
+    <!-- HOME -->
+    <div class="main-section" id="home">
+      <div class="content">
+        <img src="assets/matcha cup 1.png" alt="Matcha Latte" />
+        <div class="text-container">
+          <h2>Welcome to Matchaddori – A Matcha Lover’s Haven! 🍵</h2>
+          <p>
+            At Matchaddori, we craft every cup with the finest ceremonial-grade matcha, whisked to perfection for a smooth, rich, and refreshing experience. Whether you're here for a creamy latte, a traditional bowl of matcha, or a unique matcha-infused treat, we’re dedicated to bringing you pure, vibrant flavors in every sip.
+            Step into our cozy space, take a moment to unwind, and savor the art of matcha. 💚🌸
+          </p>
+          <p class="location">📍 Visit us in-store or order online!</p>
+          <p>6 San Juan St. Purok 4B, Lower Bicutan, Taguig City | 09179973204</p>
+        </div>
+      </div>
     </div>
+
+    <!-- MENU -->
+    <div class="main-section" id="menu" style="display: none;">
+      <div class="menu-content">
+        <div class="menu-grid">
+          <!-- Repeat for each menu item -->
+          <div class="menu-item">
+            <img src="assets/hot matcha.png" alt="Hot Matcha Latte" />
+            <div class="menu-text">Hot Matcha Latte <span>P120</span></div>
+          </div>
+          <div class="menu-item">
+            <img src="assets/iced matcha.png" alt="Iced Matcha Latte" />
+            <div class="menu-text">Iced Matcha Latte <span>P150</span></div>
+          </div>
+          <div class="menu-item">
+            <img src="assets/iced-strawberry-matcha-latte.png" alt="Strawberry Matcha Latte" />
+            <div class="menu-text">Strawberry Matcha Latte <span>P180</span></div>
+          </div>
+          <div class="menu-item">
+            <img src="assets/ube matcha latte.png" alt="Ube Matcha Latte" />
+            <div class="menu-text">Ube Matcha Latte <span>P180</span></div>
+          </div>
+          <div class="menu-item">
+            <img src="assets/dirty matcha.png" alt="Dirty Matcha" />
+            <div class="menu-text">Dirty Matcha <span>P160</span></div>
+          </div>
+          <div class="menu-item">
+            <img src="assets/matcha frappe.png" alt="Matcha Frappe" />
+            <div class="menu-text">Matcha Frappe <span>P210</span></div>
+          </div>
+          <div class="menu-item">
+            <img src="assets/injeolmi matcha latte.png" alt="Injeolmi Matcha Latte" />
+            <div class="menu-text">Injeolmi Matcha Latte <span>P200</span></div>
+          </div>
+          <div class="menu-item">
+            <img src="assets/matcha choux cream.png" alt="Matcha Choux Cream" />
+            <div class="menu-text">Matcha Choux Cream <span>P220</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MUSIC -->
+    <div class="main-section" id="music" style="display: none;">
+        <div class="music-section">
+            <div class="music-frame">
+                <!-- Screen (Custom Song Display) -->
+                <div class="screen">
+                    <div class="image-info-container">
+                        <img src="assets/Rectangle 81.png" alt="Feel My Rhythm" class="album-art">
+                        <div class="song-info">
+                            <p class="song-title">Feel My Rhythm</p>
+                            <p class="artist">Red Velvet</p>
+                        </div>
+                    </div>
+                    <audio id="audio-player" src="assets/Feel My Rhythm.mp3"></audio>
+                    <div class="progress-container">
+                        <input type="range" min="0" max="235" value="130" class="progress-bar">
+                        <div class="time-container">
+                            <span class="current-time">0:00</span>
+                            <span class="duration-time">3:30</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- iPod Circular Controls -->
+                <div class="ipod-controls">
+                    <div class="circle">
+                        <div class="inner-circle"></div>
+                        <span class="menu">MENU</span>
+                        <button class="control-btn prev"><img src="assets/bk.png" class="back"></button>
+                        <button class="control-btn play"><img src="assets/play.png" class="play"></button>
+                        <button class="control-btn next"><img src="assets/fr.png" class="forward"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JOBS -->
+    <div class="main-section" id="jobs" style="display: none;">
+      <div class="job-section">
+        <div class="job-content">
+          <h2 class="job-heading">We're Hiring! Join Our Matcha Team!</h2>
+          <p>
+            Are you passionate about matcha and love crafting the perfect cup? Matchaddori is looking for a Matcha Barista to join our team!
+          </p>
+          <h3>✨ What we're looking for:</h3>
+          <ul>
+            <li>✔️ A love for matcha and specialty drinks</li>
+            <li>✔️ Great customer service skills</li>
+            <li>✔️ Experience in coffee/tea preparation (bonus, but not required!)</li>
+            <li>✔️ A positive, team-oriented attitude</li>
+          </ul>
+          <h3>✨ What we offer:</h3>
+          <ul>
+            <li>💚 A fun and welcoming work environment</li>
+            <li>💚 Training in matcha preparation and latte art</li>
+            <li>💚 Flexible scheduling and growth opportunities</li>
+          </ul>
+          <p>If you’re ready to whisk up something amazing, apply today! 📩</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/ddorimiiiiiiiiiiiii/" target="_blank">
+              <img src="assets/facebook.png" alt="Facebook" />
+            </a>
+            <a href="mailto:ddorimi13@gmail.com">
+              <img src="assets/gmail.png" alt="Gmail" />
+            </a>
+          </div>
+          <p>#NowHiring #MatchaBarista #JoinOurTeam</p>
+        </div>
+        <div class="job-image">
+          <img src="assets/matchabarista.png" alt="Matcha Preparation" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>Copyright &copy; 2025 Matchaddori |
+      <b>ddorimi13@gmail.com</b></p>
+  </div>
 </body>
+<script src="script.js" defer></script>
 </html>

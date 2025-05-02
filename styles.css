@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+
 body {
     margin: 0;
     font-family: "Poppins", sans-serif;
@@ -9,6 +10,8 @@ body {
     min-height: 100vh;
 
 }
+
+
 .header {
     background-color: #A5B68D;
     text-align: center;
@@ -23,14 +26,19 @@ body {
 .container {
     display: flex;
     align-items: flex-start;
+    height: 100%;
+    flex-grow: 1;
 }
 
 .sidebar {
-    height: 600px;
-    width: 900px;
+    background-image: url('assets/BG PINK.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover; /* important */
+    width: 100%;
     max-width: 200px;
-    background: url('assets/BG\ PINK.png')  no-repeat center center/cover;
-    padding: 50px;
+    min-height: 65.3vh;
+    padding: 50px 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -145,7 +153,7 @@ button.active {
 
 .menu-content {
     background-color: #FCFFE0;
-    width: 80%;
+    width: 105%;
     margin-left: 100px;
     padding: 40px;
     text-align: center; 
@@ -219,7 +227,7 @@ button.active {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 200%;
     min-height: 70vh;
     background-color: #FCFFE0;
 }
@@ -234,7 +242,7 @@ button.active {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 50px;
+    padding: 60px;
     position: relative;
     gap: 20px;
 }
@@ -397,7 +405,7 @@ button.active {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 20px;
+    padding: 10px;
 }
 
 .job-content {
@@ -470,3 +478,112 @@ button.active {
     width: 40px;
     height: 40px;
 }
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sidebar {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 100%;
+        min-height: auto;
+        background-size: cover;
+        flex-wrap: wrap;
+        gap: 10px; 
+
+    }
+
+    .sidebar button {
+        width: 100%;
+        max-width: none;
+        font-size: 18px;
+        margin: 10px;
+    }
+
+    .content {
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .content img {
+        width: 100%;
+        max-width: 350px;
+        margin-bottom: 20px;
+    }
+
+    .text-container {
+        width: 100%;
+    }
+
+    .content h2 {
+        font-size: 24px;
+        white-space: normal;
+        overflow: visible;
+        animation: none;
+        border: none;
+    }
+
+    .content p {
+        font-size: 18px;
+    }
+
+    .menu-content {
+        width: 100%;
+        margin-left: 0;
+        padding: 20px;
+      }
+
+    .menu-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; 
+        gap: 20px;
+    }
+
+    .menu-item {
+        width: 80%;
+        max-width: 250px;
+    }
+
+    .music-section {
+        flex-direction: column;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .music-frame {
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .screen, .circle {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .job-section {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .job-content, .job-image {
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+    }
+
+    .footer {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
